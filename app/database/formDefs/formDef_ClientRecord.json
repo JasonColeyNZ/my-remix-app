@@ -1,0 +1,99 @@
+{
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "fbb4fec3-4996-44b9-80a0-ad6b6dab19fe",
+          "text": "<p><span style=\"font-size: 14pt;\"><span style=\"font-family: Verdana, Geneva, sans-serif;\"><span style=\"color: rgb(47, 84, 150); text-decoration: inherit;\"><strong>Client Record</strong></span></span></span></p>",
+          "colSpan": 0,
+          "fieldType": "HEADER",
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "id": "datetime",
+          "label": "Date",
+          "colSpan": 0,
+          "options": [],
+          "fieldType": "DATETIME",
+          "validation": {
+            "required": true
+          },
+          "displayOptions": {}
+        }
+      ],
+      "sortOrder": 0
+    },
+    {
+      "controls": [
+        {
+          "id": "subjective",
+          "label": "Subjective",
+          "colSpan": 0,
+          "options": [],
+          "fieldType": "TEXTAREA",
+          "validation": {
+            "required": false
+          },
+          "displayOptions": {}
+        },
+        {
+          "id": "objective",
+          "label": "Objective",
+          "colSpan": 0,
+          "options": [],
+          "fieldType": "TEXTAREA",
+          "validation": {
+            "required": false
+          },
+          "displayOptions": {}
+        }
+      ],
+      "sortOrder": 1
+    },
+    {
+      "controls": [
+        {
+          "id": "assessment",
+          "label": "Assessment",
+          "colSpan": 0,
+          "options": [],
+          "fieldType": "TEXTAREA",
+          "validation": {
+            "required": false
+          },
+          "displayOptions": {}
+        },
+        {
+          "id": "plan",
+          "label": "Plan",
+          "colSpan": 0,
+          "options": [],
+          "fieldType": "TEXTAREA",
+          "validation": {
+            "required": false
+          },
+          "displayOptions": {}
+        }
+      ],
+      "sortOrder": 2
+    },
+    {
+      "controls": [
+        {
+          "id": "note",
+          "label": "Notes",
+          "colSpan": 0,
+          "options": [],
+          "fieldType": "TEXTAREA",
+          "validation": {
+            "required": false
+          },
+          "displayOptions": {}
+        }
+      ],
+      "sortOrder": 3
+    }
+  ]
+}

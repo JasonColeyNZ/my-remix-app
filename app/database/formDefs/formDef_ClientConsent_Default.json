@@ -1,0 +1,64 @@
+{
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "fbb4fec3-4996-44b9-80a0-ad6b6dab19fe",
+          "text": "{name}",
+          "colSpan": 0,
+          "fieldType": "HEADER",
+          "sortOrder": 0,
+          "validation": {
+            "required": false
+          }
+        }
+      ],
+      "sortOrder": 0
+    },
+    {
+      "controls": [
+        {
+          "id": "consentText",
+          "text": "",
+          "colSpan": 0,
+          "fieldType": "RICHTEXT",
+          "sortOrder": 0,
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 1
+    },
+    {
+      "controls": [
+        {
+          "id": "clientAcceptance",
+          "label": "I agree to use electronic records and signatures",
+          "colSpan": 0,
+          "fieldType": "CHECKBOX",
+          "sortOrder": 0,
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 2
+    },
+    {
+      "controls": [
+        {
+          "id": "clientSignatureId",
+          "label": "Client Signature",
+          "colSpan": 0,
+          "fieldType": "SIGNATURE",
+          "sortOrder": 0,
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 3
+    }
+  ]
+}

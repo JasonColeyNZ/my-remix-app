@@ -1,0 +1,16 @@
+{
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "signatureId",
+          "label": "Signature",
+          "colSpan": 0,
+          "fieldType": "RICHTEXT",
+          "sortOrder": 0
+        }
+      ],
+      "sortOrder": 1
+    }
+  ]
+}

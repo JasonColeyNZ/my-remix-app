@@ -13,12 +13,20 @@
     "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": ["./app/*"],
+      "#*": ["./*"]
     },
 
     // Vite takes care of building everything, not tsc.
-    "noEmit": true
+    "noEmit": true,
+
+    "allowImportingTsExtensions": true,
+    //Referenced project must have setting "composite": true.
+    "composite": true,
+    "disableReferencedProjectLoad": true,
+    "disableSolutionSearching": true,
+    "disableSourceOfProjectReferenceRedirect": true
   }
 }

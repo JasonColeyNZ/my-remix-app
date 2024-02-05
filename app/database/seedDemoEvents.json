@@ -1,0 +1,1037 @@
+[
+  {
+    "email": "marsha.allen@example.com",
+    "dayDifference": 7,
+    "startTime": 600,
+    "endTime": 690,
+    "service1": "Micro-Needling",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "jim.alvarez@example.com",
+    "dayDifference": -196,
+    "startTime": 600,
+    "endTime": 645,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "jim.alvarez@example.com",
+    "dayDifference": 3,
+    "startTime": 600,
+    "endTime": 645,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "lena.austin@example.com",
+    "dayDifference": -66,
+    "startTime": 900,
+    "endTime": 945,
+    "service1": "Juvederm Volux",
+    "service2": "Radiesse",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "lena.austin@example.com",
+    "dayDifference": 7,
+    "startTime": 900,
+    "endTime": 945,
+    "service1": "Juvederm Volux",
+    "service2": "Radiesse",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "amelia.bailey@example.com",
+    "dayDifference": -120,
+    "startTime": 660,
+    "endTime": 705,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "amelia.bailey@example.com",
+    "dayDifference": 7,
+    "startTime": 600,
+    "endTime": 645,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "jeanne.bates@example.com",
+    "dayDifference": -197,
+    "startTime": 795,
+    "endTime": 870,
+    "service1": "Micro-Needling",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "jeanne.bates@example.com",
+    "dayDifference": 3,
+    "startTime": 795,
+    "endTime": 870,
+    "service1": "Micro-Needling",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "judy.bennett@example.com",
+    "dayDifference": -91,
+    "startTime": 600,
+    "endTime": 660,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "judy.bennett@example.com",
+    "dayDifference": 4,
+    "startTime": 600,
+    "endTime": 660,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "katherine.bowman@example.com",
+    "dayDifference": -84,
+    "startTime": 750,
+    "endTime": 780,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "katherine.bowman@example.com",
+    "dayDifference": 4,
+    "startTime": 660,
+    "endTime": 690,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "monica.castillo@example.com",
+    "dayDifference": -80,
+    "startTime": 645,
+    "endTime": 690,
+    "service1": "Botox",
+    "service2": "Radiesse",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "monica.castillo@example.com",
+    "dayDifference": 7,
+    "startTime": 645,
+    "endTime": 690,
+    "service1": "Botox",
+    "service2": "Radiesse",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "maurice.chambers@example.com",
+    "dayDifference": -73,
+    "startTime": 660,
+    "endTime": 720,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "maurice.chambers@example.com",
+    "dayDifference": -31,
+    "startTime": 660,
+    "endTime": 720,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "maurice.chambers@example.com",
+    "dayDifference": 7,
+    "startTime": 660,
+    "endTime": 720,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "joann.cook@example.com",
+    "dayDifference": -144,
+    "startTime": 780,
+    "endTime": 825,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "joann.cook@example.com",
+    "dayDifference": 7,
+    "startTime": 780,
+    "endTime": 825,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "howard.cooper@example.com",
+    "dayDifference": -193,
+    "startTime": 600,
+    "endTime": 660,
+    "service1": "Botox",
+    "service2": "Juvederm Volux",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "howard.cooper@example.com",
+    "dayDifference": 3,
+    "startTime": 600,
+    "endTime": 660,
+    "service1": "Botox",
+    "service2": "Juvederm Volux",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "diana.frazier@example.com",
+    "dayDifference": -98,
+    "startTime": 840,
+    "endTime": 885,
+    "service1": "Botox",
+    "service2": "Restylane Lyft",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "diana.frazier@example.com",
+    "dayDifference": 3,
+    "startTime": 780,
+    "endTime": 825,
+    "service1": "Botox",
+    "service2": "Restylane Lyft",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "katherine.green@example.com",
+    "dayDifference": -120,
+    "startTime": 750,
+    "endTime": 795,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "katherine.green@example.com",
+    "dayDifference": 4,
+    "startTime": 690,
+    "endTime": 735,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "enrique.gutierrez@example.com",
+    "dayDifference": -144,
+    "startTime": 990,
+    "endTime": 1020,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "enrique.gutierrez@example.com",
+    "dayDifference": 3,
+    "startTime": 990,
+    "endTime": 1020,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "denise.hamilton@example.com",
+    "dayDifference": -146,
+    "startTime": 750,
+    "endTime": 780,
+    "service1": "Xeomin",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "denise.hamilton@example.com",
+    "dayDifference": 3,
+    "startTime": 750,
+    "endTime": 780,
+    "service1": "Xeomin",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "mason.harrison@example.com",
+    "dayDifference": -193,
+    "startTime": 660,
+    "endTime": 690,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "mason.harrison@example.com",
+    "dayDifference": 3,
+    "startTime": 660,
+    "endTime": 690,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "kay.henderson@example.com",
+    "dayDifference": -245,
+    "startTime": 780,
+    "endTime": 810,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "kay.henderson@example.com",
+    "dayDifference": -161,
+    "startTime": 780,
+    "endTime": 810,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "kay.henderson@example.com",
+    "dayDifference": 4,
+    "startTime": 780,
+    "endTime": 810,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "gregory.holland@example.com",
+    "dayDifference": 4,
+    "startTime": 600,
+    "endTime": 690,
+    "service1": "Micro-Needling",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "andrew.holt@example.com",
+    "dayDifference": -35,
+    "startTime": 660,
+    "endTime": 720,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "andrew.holt@example.com",
+    "dayDifference": 4,
+    "startTime": 660,
+    "endTime": 720,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "connie.hunter@example.com",
+    "dayDifference": 4,
+    "startTime": 750,
+    "endTime": 840,
+    "service1": "Micro-Needling",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "clarence.jackson@example.com",
+    "dayDifference": -196,
+    "startTime": 810,
+    "endTime": 855,
+    "service1": "Xeomin",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "clarence.jackson@example.com",
+    "dayDifference": -105,
+    "startTime": 810,
+    "endTime": 855,
+    "service1": "Xeomin",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "clarence.jackson@example.com",
+    "dayDifference": 4,
+    "startTime": 810,
+    "endTime": 855,
+    "service1": "Xeomin",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "debbie.jimenez@example.com",
+    "dayDifference": -115,
+    "startTime": 900,
+    "endTime": 945,
+    "service1": "Juvederm Volux",
+    "service2": "Radiesse",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "debbie.jimenez@example.com",
+    "dayDifference": 4,
+    "startTime": 900,
+    "endTime": 945,
+    "service1": "Juvederm Volux",
+    "service2": "Radiesse",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "cindy.kennedy@example.com",
+    "dayDifference": -120,
+    "startTime": 945,
+    "endTime": 990,
+    "service1": "Dysport",
+    "service2": "Belotera PLUS",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "cindy.kennedy@example.com",
+    "dayDifference": 3,
+    "startTime": 945,
+    "endTime": 990,
+    "service1": "Dysport",
+    "service2": "Belotera PLUS",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "elizabeth.lambert@example.com",
+    "dayDifference": -122,
+    "startTime": 780,
+    "endTime": 855,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "elizabeth.lambert@example.com",
+    "dayDifference": -99,
+    "startTime": 780,
+    "endTime": 855,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "elizabeth.lambert@example.com",
+    "dayDifference": -38,
+    "startTime": 780,
+    "endTime": 855,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "elizabeth.lambert@example.com",
+    "dayDifference": 4,
+    "startTime": 780,
+    "endTime": 855,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "pauline.larson@example.com",
+    "dayDifference": -186,
+    "startTime": 990,
+    "endTime": 1035,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "pauline.larson@example.com",
+    "dayDifference": 4,
+    "startTime": 990,
+    "endTime": 1035,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "gordon.lawrence@example.com",
+    "dayDifference": 5,
+    "startTime": 600,
+    "endTime": 690,
+    "service1": "Micro-Needling",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "priscilla.martin@example.com",
+    "dayDifference": 5,
+    "startTime": 750,
+    "endTime": 840,
+    "service1": "Micro-Needling",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "caroline.martinez@example.com",
+    "dayDifference": -100,
+    "startTime": 600,
+    "endTime": 660,
+    "service1": "Botox",
+    "service2": "Radiesse",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "caroline.martinez@example.com",
+    "dayDifference": 5,
+    "startTime": 600,
+    "endTime": 660,
+    "service1": "Botox",
+    "service2": "Radiesse",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "janice.mason@example.com",
+    "dayDifference": -58,
+    "startTime": 780,
+    "endTime": 870,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "janice.mason@example.com",
+    "dayDifference": -25,
+    "startTime": 780,
+    "endTime": 870,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "janice.mason@example.com",
+    "dayDifference": 5,
+    "startTime": 780,
+    "endTime": 870,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "clayton.mccoy@example.com",
+    "dayDifference": -91,
+    "startTime": 990,
+    "endTime": 1050,
+    "service1": "Botox",
+    "service2": "Juvederm ",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "clayton.mccoy@example.com",
+    "dayDifference": 5,
+    "startTime": 990,
+    "endTime": 1050,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "minnie.mitchell@example.com",
+    "dayDifference": -84,
+    "startTime": 900,
+    "endTime": 945,
+    "service1": "Xeomin",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "minnie.mitchell@example.com",
+    "dayDifference": 3,
+    "startTime": 900,
+    "endTime": 945,
+    "service1": "Xeomin",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "pamela.mitchell@example.com",
+    "dayDifference": 5,
+    "startTime": 660,
+    "endTime": 690,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "alfred.montgomery@example.com",
+    "dayDifference": -115,
+    "startTime": 690,
+    "endTime": 735,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "alfred.montgomery@example.com",
+    "dayDifference": 5,
+    "startTime": 690,
+    "endTime": 735,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "marian.morris@example.com",
+    "dayDifference": -80,
+    "startTime": 900,
+    "endTime": 945,
+    "service1": "Juvederm Volux",
+    "service2": "Radiesse",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "marian.morris@example.com",
+    "dayDifference": 5,
+    "startTime": 900,
+    "endTime": 945,
+    "service1": "Juvederm Volux",
+    "service2": "Radiesse",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "vanessa.murray@example.com",
+    "dayDifference": -70,
+    "startTime": 660,
+    "endTime": 720,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "vanessa.murray@example.com",
+    "dayDifference": -30,
+    "startTime": 660,
+    "endTime": 720,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "vanessa.murray@example.com",
+    "dayDifference": 5,
+    "startTime": 660,
+    "endTime": 720,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "christopher.nelson@example.com",
+    "dayDifference": -132,
+    "startTime": 810,
+    "endTime": 855,
+    "service1": "Xeomin",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "christopher.nelson@example.com",
+    "dayDifference": 5,
+    "startTime": 810,
+    "endTime": 855,
+    "service1": "Xeomin",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "glenda.newman@example.com",
+    "dayDifference": 6,
+    "startTime": 795,
+    "endTime": 870,
+    "service1": "Micro-Needling",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "christy.olson@example.com",
+    "dayDifference": -86,
+    "startTime": 780,
+    "endTime": 810,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "christy.olson@example.com",
+    "dayDifference": 5,
+    "startTime": 780,
+    "endTime": 810,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "leona.olson@example.com",
+    "dayDifference": -99,
+    "startTime": 600,
+    "endTime": 645,
+    "service1": "Botox",
+    "service2": "Juvederm Volbella",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "leona.olson@example.com",
+    "dayDifference": 6,
+    "startTime": 600,
+    "endTime": 645,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra PLUS",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "loretta.payne@example.com",
+    "dayDifference": -114,
+    "startTime": 600,
+    "endTime": 660,
+    "service1": "Botox",
+    "service2": "Juvederm Volux",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "loretta.payne@example.com",
+    "dayDifference": 6,
+    "startTime": 600,
+    "endTime": 660,
+    "service1": "Botox",
+    "service2": "Juvederm Volux",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "mildred.phillips@example.com",
+    "dayDifference": -130,
+    "startTime": 660,
+    "endTime": 690,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "mildred.phillips@example.com",
+    "dayDifference": 6,
+    "startTime": 660,
+    "endTime": 690,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "melissa.ray@example.com",
+    "dayDifference": -84,
+    "startTime": 645,
+    "endTime": 705,
+    "service1": "Botox",
+    "service2": "Juvederm Volux",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "melissa.ray@example.com",
+    "dayDifference": 6,
+    "startTime": 645,
+    "endTime": 705,
+    "service1": "Botox",
+    "service2": "Juvederm Volux",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "cassandra.reynolds@example.com",
+    "dayDifference": -139,
+    "startTime": 705,
+    "endTime": 750,
+    "service1": "Botox",
+    "service2": "Belotera PLUS",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "cassandra.reynolds@example.com",
+    "dayDifference": 6,
+    "startTime": 705,
+    "endTime": 750,
+    "service1": "Botox",
+    "service2": "Belotera PLUS",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "paula.rose@example.com",
+    "dayDifference": -184,
+    "startTime": 645,
+    "endTime": 705,
+    "service1": "Botox",
+    "service2": "Juvederm Volux",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "paula.rose@example.com",
+    "dayDifference": 3,
+    "startTime": 645,
+    "endTime": 705,
+    "service1": "Botox",
+    "service2": "Juvederm Volux",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "christina.simmons@example.com",
+    "dayDifference": -167,
+    "startTime": 870,
+    "endTime": 900,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "christina.simmons@example.com",
+    "dayDifference": 6,
+    "startTime": 870,
+    "endTime": 900,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "victoria.snyder@example.com",
+    "dayDifference": -77,
+    "startTime": 945,
+    "endTime": 990,
+    "service1": "Dysport",
+    "service2": "Restylane Lyft",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "victoria.snyder@example.com",
+    "dayDifference": 6,
+    "startTime": 945,
+    "endTime": 990,
+    "service1": "Dysport",
+    "service2": "Restylane Lyft",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "katrina.spencer@example.com",
+    "dayDifference": -85,
+    "startTime": 900,
+    "endTime": 945,
+    "service1": "Xeomin",
+    "service2": "Juvederm Volbella",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "katrina.spencer@example.com",
+    "dayDifference": 6,
+    "startTime": 900,
+    "endTime": 945,
+    "service1": "Xeomin",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "bernice.stevens@example.com",
+    "dayDifference": -78,
+    "startTime": 990,
+    "endTime": 1020,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "bernice.stevens@example.com",
+    "dayDifference": 6,
+    "startTime": 990,
+    "endTime": 1020,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "bella.taylor@example.com",
+    "dayDifference": -80,
+    "startTime": 750,
+    "endTime": 780,
+    "service1": "Xeomin",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "bella.taylor@example.com",
+    "dayDifference": 6,
+    "startTime": 750,
+    "endTime": 780,
+    "service1": "Xeomin",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "beth.terry@example.com",
+    "dayDifference": -182,
+    "startTime": 990,
+    "endTime": 1050,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "beth.terry@example.com",
+    "dayDifference": 7,
+    "startTime": 990,
+    "endTime": 1050,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "allison.thompson@example.com",
+    "dayDifference": 7,
+    "startTime": 750,
+    "endTime": 840,
+    "service1": "Micro-Needling",
+    "service2": "",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "deann.torres@example.com",
+    "dayDifference": -161,
+    "startTime": 705,
+    "endTime": 750,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "deann.torres@example.com",
+    "dayDifference": -81,
+    "startTime": 690,
+    "endTime": 735,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "deann.torres@example.com",
+    "dayDifference": 7,
+    "startTime": 690,
+    "endTime": 735,
+    "service1": "Botox",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "melissa.wagner@example.com",
+    "dayDifference": -107,
+    "startTime": 780,
+    "endTime": 825,
+    "service1": "Botox",
+    "service2": "Restylane Lyft",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "melissa.wagner@example.com",
+    "dayDifference": 6,
+    "startTime": 780,
+    "endTime": 825,
+    "service1": "Botox",
+    "service2": "Restylane Lyft",
+    "teamMemberEmail": "jackie@test.com"
+  },
+  {
+    "email": "sonia.watson@example.com",
+    "dayDifference": -67,
+    "startTime": 780,
+    "endTime": 870,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "sonia.watson@example.com",
+    "dayDifference": -30,
+    "startTime": 780,
+    "endTime": 870,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "sonia.watson@example.com",
+    "dayDifference": 7,
+    "startTime": 780,
+    "endTime": 870,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "arlene.williamson@example.com",
+    "dayDifference": -123,
+    "startTime": 870,
+    "endTime": 900,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "arlene.williamson@example.com",
+    "dayDifference": 3,
+    "startTime": 870,
+    "endTime": 900,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "robin.williamson@example.com",
+    "dayDifference": -135,
+    "startTime": 825,
+    "endTime": 870,
+    "service1": "Xeomin",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "robin.williamson@example.com",
+    "dayDifference": 7,
+    "startTime": 825,
+    "endTime": 870,
+    "service1": "Xeomin",
+    "service2": "Juvederm Ultra",
+    "teamMemberEmail": "penny@test.com"
+  },
+  {
+    "email": "sharlene.young@example.com",
+    "dayDifference": -161,
+    "startTime": 630,
+    "endTime": 690,
+    "service1": "Laser Hair Removal",
+    "service2": "",
+    "teamMemberEmail": "adele@test.com"
+  },
+  {
+    "email": "sharlene.young@example.com",
+    "dayDifference": 3,
+    "startTime": 705,
+    "endTime": 750,
+    "service1": "Botox",
+    "service2": "",
+    "teamMemberEmail": "penny@test.com"
+  }
+]

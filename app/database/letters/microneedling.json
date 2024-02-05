@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "fbb4fec3-4996-44b9-80a0-ad6b6dab19fe",
+          "text": "<p><span style=\"font-size: 14pt;\"><span style=\"font-family: Verdana, Geneva, sans-serif;\"><span style=\"color: rgb(47, 84, 150); text-decoration: inherit;\"><strong>Micro-needling</strong></span></span></span></p>",
+          "colSpan": 0,
+          "fieldType": "HEADER",
+          "validation": {
+            "required": false
+          }
+        }
+      ],
+      "sortOrder": 0
+    },
+    {
+      "controls": [
+        {
+          "id": "consentText",
+          "text": "<p><span lang=\"EN-US\">I hereby authorize my practitioner or any\ndelegated associates to perform Micro-needling Therapy. I understand that this\nprocedure is purely elective.<br>\n<br>\nWhat to Expect:<br>\n<br>\n• Depending on the area of your face or body being treated and the type of\ndevice used (i.e. needle length), the procedure is well-tolerated and in some\ncases virtually painless, feeling only a mild prickling sensation.<br>\n•&nbsp;Your practitioner will apply a topical anesthetic to your skin prior to\ntreatment to reduce any pain and discomfort.<br>\n• Your skin will be pink or red in appearance, much like a sunburn, for a\ncouple of hours following treatment.<br>\n• Minor bleeding and bruising is possible depending on the length of the needle\nused and the number of times it is pressed across the treatment area.<br>\n• Your skin may feel warm, tight, and itchy for a short while. This should\nsubside in 12-48 hours.<br>\n<br>\nPossible Side-Effects:<br>\n<br>\n•&nbsp;Side effects or risks are minimal with this type of treatment and\ntypically include minor flaking or dryness of the skin with scab formation in\nrare cases.<br>\n• Milia (small white bumps) may form; these can be removed by the practitioner.<br>\n• Hyper-pigmentation (darkening of certain areas of the skin) can occur very\nrarely and usually resolves after a month.<br>\n• If you have a history of cold sores, this procedure may cause flare ups.<br>\n• Temporary redness and mild-sunburn effects may last up to 4 days.<br>\n• Freckles may temporarily lighten or permanently disappear in treated areas.<br>\n• Other potential risks include: crusting, itching, discomfort, bruising,\ninfection, swelling, and failure to achieve the desired result. Permanent\nscarring (less than 1%) is extremely rare.<br>\n<br>\nThe benefits and risks of the procedure have been explained to me, and I accept\nthese benefits and risks. The nature of my medical or cosmetic condition has\nbeen explained to my satisfaction as have been any substantial or significant\nrisks of harm. I am also aware of and accept the risk of rare and unforeseen\ncomplications which may not have been discussed and which may result from this\ntreatment.<br>\n<br>\nAfter finishing treatment, avoid the following (48 hours):<br>\n<br>\n•&nbsp;Sun or solarium<br>\n• Hard physical exercise<br>\n• Bath in chlorinated water or in the sea<br>\n• Sauna<br>\n• Other skin care treatments, inc. Filler and Botox<br>\n• Brown without sun<br>\n• Tattoo in the area<br>\n<br>\nI have had the opportunity to ask questions and seek clarification of this\nprocedure and its alternatives including no treatment and my questions have\nbeen answered satisfactorily. I understand the following contraindications\nlisted below and will notify my provider if any of the following apply to me:<br>\n<br>\n•&nbsp;Active infections - viral, fungal, bacterial<br>\n• Rashes, warts, skin cancer<br>\n• Active acne<br>\n• Immune-suppressed patients<br>\n• Skin-related autoimmune disorders<br>\n• Pregnant or breast-feeding<br>\n• Patients on anticoagulants (NSAIDS, ASA, Coumadin/Warfarin)<br>\n•&nbsp;Recent ablative dermal procedures<br>\n•&nbsp;Rosacea<br>\n• Diabetes<br>\n• Actinic (solar) keratosis<br>\n• Keloids<br>\n<br>\nPhotography<br>\n<br>\nPhotography will likely be performed before and after your treatment. This is\nstandard practice for cosmetic procedures. The photographs will only be used\nfor internal uses unless additional consent for the release of photographs is\nobtained from the patient. I do however&nbsp;consent to authorize\nANONYMOUS&nbsp;&nbsp;use for the purposes of medical audit, education and\npromotion.<br>\n<br>\nI hereby give my voluntary consent to this procedure and release the practice,\nits medical staff, and technicians from liability associated with the\nprocedure. I certify that I am a competent adult of at least 18 years of age\nand am not under the influence of alcohol or drugs. I agree that if I should\nhave any questions or concerns regarding my treatment I results I will notify\nmy partitioner.</span></p>",
+          "colSpan": 0,
+          "fieldType": "RICHTEXT",
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 1
+    },
+    {
+      "controls": [
+        {
+          "id": "clientAcceptance",
+          "label": "I agree to use electronic records and signatures",
+          "colSpan": 0,
+          "fieldType": "CHECKBOX",
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 2
+    },
+    {
+      "controls": [
+        {
+          "id": "clientSignatureId",
+          "label": "Client Signature",
+          "colSpan": 0,
+          "fieldType": "SIGNATURE",
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 3
+    }
+  ]
+}

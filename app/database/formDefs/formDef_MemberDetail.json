@@ -1,0 +1,189 @@
+{
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "fbb4fec3-4996-44b9-80a0-ad6b6dab19fe",
+          "text": "<p><span style=\"font-size: 14pt;\"><span style=\"color: rgb(47, 84, 150); text-decoration: inherit;\"><span style=\"font-family: Verdana, Geneva, sans-serif;\"><strong>Personal</strong></span></span></span></p>",
+          "label": "",
+          "colSpan": 0,
+          "fieldType": "HEADER",
+          "validation": {
+            "required": false
+          }
+        }
+      ],
+      "sortOrder": 0
+    },
+    {
+      "controls": [
+        {
+          "id": "avatarData",
+          "label": "Avatar",
+          "colSpan": 0,
+          "fieldType": "IMAGEUPLOAD",
+          "validation": {
+            "required": false
+          }
+        }
+      ],
+      "sortOrder": 1
+    },
+    {
+      "controls": [
+        {
+          "id": "firstName",
+          "label": "First Name",
+          "colSpan": 0,
+          "fieldType": "TEXTINPUT",
+          "validation": {
+            "required": true
+          }
+        },
+        {
+          "id": "lastName",
+          "label": "Last Name",
+          "colSpan": 0,
+          "fieldType": "TEXTINPUT",
+          "validation": {
+            "required": true
+          }
+        },
+        {
+          "id": "preferredName",
+          "label": "Preferred Name",
+          "colSpan": 0,
+          "fieldType": "TEXTINPUT",
+          "validation": {
+            "required": false
+          }
+        }
+      ],
+      "sortOrder": 2
+    },
+    {
+      "controls": [
+        {
+          "id": "occupation",
+          "label": "Occupation",
+          "colSpan": 0,
+          "fieldType": "TEXTINPUT",
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "id": "maritalStatus",
+          "label": "Marital Status",
+          "colSpan": 30,
+          "options": [
+            {
+              "text": "Single",
+              "value": "single",
+              "sortOrder": 0
+            },
+            {
+              "text": "Married",
+              "value": "married",
+              "sortOrder": 1
+            },
+            {
+              "text": "Widowed",
+              "value": "widowed",
+              "sortOrder": 2
+            },
+            {
+              "text": "Divorced",
+              "value": "divorced",
+              "sortOrder": 3
+            },
+            {
+              "text": "Separated",
+              "value": "separated",
+              "sortOrder": 4
+            },
+            {
+              "text": "Registered Partnership",
+              "value": "regpart",
+              "sortOrder": 5
+            }
+          ],
+          "fieldType": "SELECT",
+          "validation": {
+            "required": false
+          },
+          "controlType": "SELECT"
+        },
+        {
+          "id": "dateOfBirth",
+          "label": "Date of Birth",
+          "colSpan": 20,
+          "fieldType": "DATETIME",
+          "validation": {
+            "maxValue": 0,
+            "minValue": 0,
+            "required": false
+          },
+          "controlType": "DATE"
+        }
+      ],
+      "sortOrder": 3
+    },
+    {
+      "controls": [
+        {
+          "id": "973baba2-9d87-4ae7-8781-83871c1530bc",
+          "text": "<p><span style=\"font-size: 14pt;\"><span style=\"color: rgb(47, 84, 150); text-decoration: inherit;\"><span style=\"font-family: Verdana, Geneva, sans-serif;\"><strong>Contact</strong></span></span></span></p>",
+          "label": "",
+          "colSpan": 0,
+          "fieldType": "HEADER",
+          "validation": {
+            "required": false
+          }
+        }
+      ],
+      "sortOrder": 4
+    },
+    {
+      "controls": [
+        {
+          "id": "email",
+          "label": "Email",
+          "colSpan": 0,
+          "fieldType": "TEXTINPUT",
+          "validation": {
+            "required": true
+          }
+        },
+        {
+          "id": "mobileNumber",
+          "label": "Mobile",
+          "colSpan": 20,
+          "fieldType": "TEXTINPUT",
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "id": "homeNumber",
+          "label": "Home",
+          "colSpan": 20,
+          "fieldType": "TEXTINPUT",
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "id": "workNumber",
+          "label": "Work",
+          "colSpan": 20,
+          "fieldType": "TEXTINPUT",
+          "validation": {
+            "required": false
+          }
+        }
+      ],
+      "sortOrder": 5
+    }
+  ]
+}

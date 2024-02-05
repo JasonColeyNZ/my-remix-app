@@ -1,0 +1,19 @@
+{
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "fbb4fec3-4996-44b9-80a0-ad6b6dab19fe",
+          "text": "{name}",
+          "colSpan": 0,
+          "fieldType": "HEADER",
+          "sortOrder": 0,
+          "validation": {
+            "required": false
+          }
+        }
+      ],
+      "sortOrder": 0
+    }
+  ]
+}

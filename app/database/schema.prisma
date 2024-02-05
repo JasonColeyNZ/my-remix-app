@@ -1,0 +1,1277 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("RLS_DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+  // schemas = [ "public"]
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  // previewFeatures = ["multiSchema"]
+}
+
+
+// generator zod {
+//   provider       = "zod-prisma-types"
+//   useMultipleFiles                 = true // default is false
+//   createInputTypes                 = false // default is true
+//     addIncludeType                   = false // default is true
+//   addSelectType                    = false // default is true
+// }
+
+enum UserOnboarding {
+  NOT_STARTED
+  PERSONAL_COMPLETED
+  COMPANY_COMPLETED
+  DEMO_COMPLETED
+  LEGAL_COMPLETED
+  COMPLETED
+  // //@@schema("public")
+}
+
+model User {
+  id               String                         @id @db.Uuid
+  firstName         String?
+  lastName         String?
+  email            String
+  createdAt        DateTime                        @default(now()) @db.Timestamptz
+  updatedAt        DateTime                        @default(now()) @updatedAt @db.Timestamptz
+  entityId         String?                         @db.Uuid
+  // userPermissionId String?                         @db.Uuid
+  mobileNumber     String?
+  homeNumber       String?
+  maritalStatus    String?
+  workNumber       String?
+  dateOfBirth      DateTime?
+  formData         Json?
+  formId           String?                         @db.Uuid
+  avatarData       Json?
+  demo             Boolean                         @default(false)
+  onboardingStatus UserOnboarding                  @default(NOT_STARTED)
+  entity           Entity?                         @relation("EntityUsers", fields: [entityId], references: [id], onDelete: Cascade)
+  entityOwned      Entity?                         @relation("EntityOwner")
+  // permissions      UserPermissions?                @relation(fields: [userPermissionId], references: [id])
+  bookings         Booking[]
+  notes            UserNote[]
+  defaults         UserDefaults?
+  hours            UserHour[]
+  locations        UserLocation[]
+  services         UsersOnServices[]
+  records          Record[]
+  userConnections  UserConnection[]
+  recordsCreated   Record[]                 @relation(name: "creator")                  
+  messagesCreated  Message[]                @relation(name: "creator")
+  userNotesCreated UserNote[]               @relation(name: "creator")
+  clientNotesCreated Note[]                 @relation(name: "creator")
+  bookingsCreated  Booking[]                @relation(name: "creator")
+  clientConsentsCreated ClientConsent[]     @relation(name: "creator")
+  
+  role             Role?                    @relation(fields: [roleId], references: [id])   
+  roleId           String?                  @db.Uuid
+  
+  @@unique([entityId, email])
+  @@index([entityId])
+  @@index([id, entityId])
+  
+  // @@unique([ownerId])
+  //@@unique([entityId, email])
+  // //@@schema("public")
+}
+
+
+model Entity {
+  id                String                         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name              String
+  users             User[]                         @relation("EntityUsers") 
+  ownerId           String?                        @db.Uuid
+  mobileNumber      String?   
+  workNumber        String?
+  //as part of the onboarding they cna choose to not install
+  demoDataInstalled Boolean                        @default(true)
+  addressId         String?                        @db.Uuid
+  address           Address?                       @relation(fields: [addressId], references: [id])
+  owner             User?                          @relation("EntityOwner",fields: [ownerId], references: [id], onDelete: Cascade)
+  categories        Category[]
+  clients           Client[]
+  forms             Form[]
+  locations         Location[]
+  // questionnaires   Questionnaire[]
+  textTemplates     TextTemplate[]
+  fields             Field[]
+  products          Product[]
+  productTypes      ProductType[]
+  services          Service[]
+  integrations      EntityIntegration[]
+  tags              Tag[]
+  roles             Role[]
+  
+  @@unique([ownerId])
+  @@index([name])
+  //@@schema("public")
+}
+
+
+enum FormArea {
+  ClientDetail
+  ClientNote
+  ClientQuestionnaire
+  ClientRecord
+  ServiceRecord
+  ClientConsent
+  MemberDetail
+  MemberNote
+  Products
+  Services
+  Category
+  //@@schema("public")
+  }
+
+model Form {
+  id                String                           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name              String
+  description       String?                          
+  area              FormArea                         @default(value: ClientDetail)
+  formDefinition     Json    
+  entityId          String                           @default(dbgenerated("get_entity_id()")) @db.Uuid
+  default           Boolean                          @default(false)
+  demo              Boolean                          @default(false)
+  entity            Entity                           @relation(fields: [entityId], references: [id], onUpdate: NoAction, onDelete: Cascade)
+  expirationMonths  Int?
+  // services       FormsOnServices[]
+  formData          FormData[]
+  services          ConsentsOnServices[]
+  @@index([area])
+  @@index([entityId])
+  //@@schema("public")
+}
+
+
+// model UserPermissions {
+//   id    String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+//   owner Boolean
+//   admin Boolean
+//   user  Boolean
+//   users User[]
+//   //@@schema("public")
+// }
+
+model Location {
+  id                String                                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name              String
+  mobileNumber      String?
+  workNumber        String?
+  entityId          String                                 @default(dbgenerated("get_entity_id()")) @db.Uuid
+  addressId         String?                               @db.Uuid
+  demo              Boolean                               @default(false)
+  entity            Entity                                @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  clients           Client[]
+  address           Address?                              @relation(fields: [addressId], references: [id])
+  hours             LocationHours[]
+  rooms             Room[]
+  users             UserLocation[]
+  records           Record[]
+  campaigns         Campaign[]
+  vendors           ThirdPartyVendor[]
+  productPrices     ProductPrice[]
+  productDiscounts  ProductDiscount[]
+  userHours         UserHour[]
+  services          ServicesOnLocations[]
+
+
+  @@index([entityId])
+  @@index([id, entityId])
+  @@index([entityId, addressId])
+  //@@schema("public")
+  
+}
+
+
+model LocationHours {
+  id         String                               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  dayOfWeek  String 
+  start      String                               
+  end        String                             
+  include    Boolean?                             @default(true)
+  locationId String                               @db.Uuid
+  location   Location                             @relation(fields: [locationId], references: [id], onDelete: Cascade)
+
+  @@index([locationId])
+  //@@schema("public")
+}
+
+model UserHour {
+  id        String                                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  dayOfWeek String
+  start     String
+  end       String
+  include   Boolean?                              @default(true)
+  locationId String                               @db.Uuid
+  location   Location                             @relation(fields: [locationId], references: [id], onDelete: Cascade)
+  userId    String                                @db.Uuid
+  user      User                                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([id])
+  @@index([dayOfWeek, start, end, locationId, userId])
+  @@index([userId, locationId])
+  //@@schema("public")
+}
+
+model Room {
+  id         String                               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name       String
+  locationId String                               @db.Uuid
+  location   Location                             @relation(fields: [locationId], references: [id], onDelete: Cascade)
+  services   ServicesOnRooms[]
+
+  @@index([locationId])
+  //@@schema("public")
+}
+
+model UserLocation {
+  id         String                               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId     String                               @db.Uuid
+  locationId String                               @db.Uuid
+  location   Location                             @relation(fields: [locationId], references: [id], onDelete: Cascade)
+  user       User                                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, locationId])
+  //@@schema("public")
+}
+
+model Service {
+  id                        String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                      String
+  price                     Decimal
+  color                     String?
+  textColor                 String?
+  duration                  String                @default("0:30")
+  timeMargin                String?
+  timeMarginDescription     String?
+  maximumConcurrentBookings Int                   @default(1)
+  description               String?
+  
+  isAddon                   Boolean               @default(false)
+  addonPrice                Decimal?
+  addonDuration             String?
+  addonTimeMargin           String?
+  servicesAddon             ServiceAddon[]        @relation(name: "ServicesAddon")
+
+  categoryId                String                @db.Uuid
+  demo                      Boolean               @default(false)
+  entityId                  String                @default(dbgenerated("get_entity_id()")) @db.Uuid
+  entity                    Entity                @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  category                  Category              @relation(fields: [categoryId], references: [id])
+  addonServices             ServiceAddon[]        @relation(name: "AddonServices")
+  bookings                  ServicesOnBookings[]
+  records                   ServicesOnRecords[]
+  locations                 ServicesOnLocations[]
+  textTemplates             TextsOnServices[]
+  users                     UsersOnServices[]
+  // forms                     FormsOnServices[]
+  rooms                     ServicesOnRooms[]
+  consents                  ConsentsOnServices[]
+  products                  ProductsOnServices[]
+
+  @@unique([entityId, name, categoryId], name: "uq_s_name_category_id")
+  @@index([entityId])
+  @@index([id, entityId])
+  @@index([categoryId])
+  //@@schema("public")
+}
+
+model ServiceAddon {
+  serviceId                 String                @db.Uuid
+  addonServiceId            String                @db.Uuid
+  service                   Service               @relation(name: "AddonServices", fields: [serviceId], references: [id])
+  addonService              Service               @relation(name: "ServicesAddon", fields: [addonServiceId], references: [id])
+
+  @@id([serviceId, addonServiceId])
+}
+
+model Category {
+  id                        String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                      String                
+  color                     String                @default("#5551CE")
+  textColor                 String                @default("#FFFFFF")
+  entityId                  String                @default(dbgenerated("get_entity_id()")) @db.Uuid
+  entity                    Entity                @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  demo                      Boolean               @default(false)
+  services                  Service[]
+  
+  
+    // @@unique([entityId, name, productTypeId], name: "uq_p_product_name_product_type_id")                 
+
+  @@unique([entityId, name], name: "uq_c_entity_id_name")
+  @@index([entityId])
+  @@index([id, entityId])
+  //@@schema("public")
+}
+
+
+model Client {
+  id                        String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  firstName                  String
+  lastName                  String
+  email                     String
+  dateOfBirth               DateTime?
+  mobileNumber              String?
+  occupation                String?
+  addressId                 String?               @db.Uuid
+  entityId                  String                @default(dbgenerated("get_entity_id()")) @db.Uuid
+  defaultLocationId         String?               @db.Uuid
+  countryOfBirth            String?
+  homeNumber                String?
+  maritalStatus             String?
+  preferredName             String?
+  workNumber                String?
+  formData                  Json?
+  formId                    String                @db.Uuid
+  avatarData                Json?
+  demo                      Boolean               @default(false)
+  messages                  Message[]
+  bookings                  Booking[]
+  address                   Address?              @relation(fields: [addressId], references: [id])
+  defaultLocation           Location?             @relation(fields: [defaultLocationId], references: [id])
+  entity                    Entity                @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  notes                     Note[]
+  clientConsents            ClientConsent[]
+  clientQuestionnaires      ClientQuestionnaire[]
+  //questionnaireRespons    e QuestionnaireResponse[]
+  procedures                Record[]
+  signatures                Signature[]
+  // integrationLists          ClientToIntegrationList[]
+  tags                      ClientTag[]
+
+  @@unique([entityId, email])
+  @@index([entityId])
+  @@index([entityId, id])
+  // @@index([entityId, defaultLocationId])
+}
+
+enum TagType {
+  Client
+  User
+  Booking
+  Record
+}
+
+model Tag {
+  id                        String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                      String                @db.Citext
+  tagType                   TagType
+  color                     String                @default("#5551CE")
+  textColor                 String                @default("#FFFFFF")
+  integrationTagId          String?
+  entityId                  String                @default(dbgenerated("get_entity_id()")) @db.Uuid
+  entity                    Entity                @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  clients                   ClientTag[]
+  
+  @@index([entityId, tagType])
+}
+
+model ClientTag {
+  id                        String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  clientId                  String                @db.Uuid
+  tagId                     String                @db.Uuid
+  client                    Client                @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  tag                       Tag                  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  // @@id([clientId, tagId])
+  @@index([clientId])
+  @@index([tagId])
+}
+
+
+enum BookingStatus {
+  PREPARING 
+  BOOKED
+  CANCELLED
+}
+
+model Booking {
+  id                  String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  startDate           DateTime?
+  endDate             DateTime?
+  title               String?
+  description         String?
+  blockTime           Boolean             @default(false)
+  allDay              Boolean             @default(false)
+  color               String              @default("#5551CE")
+  textColor           String              @default("#FFFFFF")
+  userId              String              @db.Uuid
+  clientId            String              @db.Uuid
+  client              Client              @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  user                User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  services            ServicesOnBookings[]
+
+  status              BookingStatus       @default (PREPARING)
+  createdBy           String              @db.Uuid
+  creator             User                @relation(name: "creator", fields: [createdBy], references: [id], onDelete: Cascade)
+  createdAt           DateTime            @default(now()) @db.Timestamptz
+
+  @@index([clientId])
+  @@index([userId])
+  @@index([userId, clientId])
+  //@@schema("public")
+}
+
+
+model Note {
+  id       String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title    String
+  text     String
+  clientId String                 @db.Uuid
+  formId   String                 @db.Uuid
+  formData Json
+  datetime DateTime
+  client   Client                 @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  createdBy          String                 @db.Uuid
+  creator            User                   @relation(name: "creator", fields: [createdBy], references: [id], onDelete: Cascade)
+  createdAt          DateTime               @default(now()) @db.Timestamptz
+
+  @@index([clientId])
+  //@@schema("public")
+}
+
+model UserNote {
+  id       String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title    String
+  text     String
+  userId   String                 @db.Uuid
+  formId   String                 @db.Uuid
+  formData Json
+  datetime DateTime
+  User     User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdBy          String                 @db.Uuid
+  creator            User                   @relation(name:"creator",fields: [createdBy], references: [id], onDelete: Cascade)
+  createdAt          DateTime               @default(now()) @db.Timestamptz
+
+  @@index([userId])
+  //@@schema("public")
+}
+
+enum MessageType {
+  EMAIL
+  SMS
+  //@@schema("public")
+}
+
+enum MessageStatus {
+  SENDING
+  SENT
+  FAILED
+  //@@schema("public")
+  }
+
+model Message {
+  id       String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  subject  String
+  text     String
+  type     MessageType            @default (SMS)
+  status   MessageStatus          @default (SENDING)
+  clientId String                 @db.Uuid
+  datetime DateTime
+  client   Client                 @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  createdBy          String                 @db.Uuid
+  creator            User                   @relation(name:"creator", fields: [createdBy], references: [id], onDelete: Cascade)
+  createdAt          DateTime               @default(now()) @db.Timestamptz
+
+  @@index([clientId])
+  //@@schema("public")
+}
+
+model Record {
+  id                 String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  datetime           DateTime               @default(now()) @db.Timestamptz
+  title              String?
+  // description        String?
+  totalCost          Decimal?
+  clientId           String                 @db.Uuid
+  userId             String                 @db.Uuid
+  locationId         String                 @db.Uuid
+  totalDuration      Int?
+  // bloodPressure      String?
+  subjective         String?
+  objective          String?
+  assessment         String?
+  plan               String?
+  notes              String?
+  client             Client                 @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  user               User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  location           Location               @relation(fields: [locationId], references: [id], onDelete: Cascade)
+  services           ServicesOnRecords[]
+  images             ImagesOnRecords[]
+  createdBy          String                 @db.Uuid
+  creator            User                   @relation(name: "creator", fields: [createdBy], references: [id], onDelete: Cascade)
+  createdAt          DateTime               @default(now()) @db.Timestamptz
+
+  @@index([clientId])
+}
+
+// // model RecordText {
+// //   id           String  @id @default(cuid())
+// //   templateName String
+// //   text         String
+// //   cost         Decimal
+// //   recordId     String
+// //   record       Record  @relation(fields: [recordId], references: [id])
+
+// //   @@index([recordId])
+// // }
+
+ model ImagesOnRecords {
+   id                 String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+   fileName            String
+   storedFileName     String
+   storageKey         String
+   signedUrl          String
+   
+   recordId           String                @db.Uuid
+   record             Record                @relation(fields: [recordId], references: [id])
+
+   @@index([recordId])
+//   //@@schema("public")
+ }
+
+
+
+
+// model FormsOnServices {
+//   formId    String                @db.Uuid
+//   serviceId String                @db.Uuid
+//   service   Service               @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+//   form      Form                  @relation(fields: [formId], references: [id])
+
+//   @@id([formId, serviceId])
+//   //@@schema("public")
+// }
+
+model UsersOnServices {
+  serviceId String                @db.Uuid
+  userId    String                @db.Uuid
+  service   Service               @relation(fields: [serviceId], references: [id])
+  user      User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, serviceId])
+  @@index([serviceId, userId])
+  //@@schema("public")
+}
+
+
+model ServicesOnRooms {
+  serviceId String                @db.Uuid
+  roomId    String                @db.Uuid
+  service   Service               @relation(fields: [serviceId], references: [id])
+  room      Room                  @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@id([serviceId, roomId])
+  //@@schema("public")
+}
+
+model ServicesOnLocations {
+  serviceId String                @db.Uuid
+  locationId    String                @db.Uuid
+  service   Service               @relation(fields: [serviceId], references: [id])
+  location  Location              @relation(fields: [locationId], references: [id], onDelete: Cascade)
+
+  @@id([serviceId, locationId])
+  //@@schema("public")
+}
+
+model ServicesOnBookings {
+  serviceId                   String                @db.Uuid
+  bookingId                   String                @db.Uuid
+  booking                     Booking               @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  service                     Service               @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@id([serviceId, bookingId])
+  //@@schema("public")
+}
+
+
+model ServicesOnRecords {
+  id                          String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  serviceId                   String                @db.Uuid
+  recordId                    String                @db.Uuid
+  serviceCost                 Decimal?
+  serviceDuration             Int?
+  actualCost                  Decimal?
+  actualDuration              Int?
+  notes                       String?
+  
+  record                      Record                @relation(fields: [recordId], references: [id], onDelete: Cascade)
+  service                     Service               @relation(fields: [serviceId], references: [id])
+  products                    ProductsOnRecords[]
+  
+  
+  // @@id([serviceId, recordId])
+  //@@schema("public")
+}
+
+model ProductsOnRecords {
+  id                          String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  productId                   String                @db.Uuid
+  serviceOnRecordId           String                @db.Uuid
+
+  serviceOnRecord             ServicesOnRecords     @relation(fields: [serviceOnRecordId], references: [id])
+  product                     Product               @relation(fields: [productId], references: [id])
+  quantity                    Int                   @default(1)
+  cost                        Decimal
+  discount                    Decimal
+  total                       Decimal
+  stocktake                   Boolean               @default(false)
+  // @@id([productId, serviceOnRecordId])
+  //@@schema("public")
+}
+
+enum TrackingType {
+  CONSUMABLE
+  UNIT
+  //@@schema("public")
+}
+
+model ProductsOnServices {
+  id                          String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  productId                   String                @db.Uuid
+  serviceId                   String                @db.Uuid
+  trackingType                TrackingType          @default (UNIT)
+  quantity                    Int                   @default(0)
+  
+  product                     Product               @relation(fields: [productId], references: [id])
+  service                     Service               @relation(fields: [serviceId], references: [id])
+
+  @@unique([productId, serviceId], name: "uq_ps_product_id_service_id")
+  // @@id([productId, serviceOnRecordId])
+  //@@schema("public")
+}
+
+model Address {
+   id                         String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+   streetAddress              String?
+   streetAddress2             String?
+   city                       String?
+   zipCode                    String?
+   state                      String?
+   country                    String?
+   clients                    Client[]
+   locations                  Location[]
+   entitys                    Entity[]
+
+   //@@schema("public")
+ }
+
+model UserDefaults {
+  id                          String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  locationId                  String?                 @db.Uuid
+  
+  clientTable                 Json?
+  clientBookingTable          Json?
+  clientNoteTable             Json?
+  clientRecordTable           Json?
+  clientMessageTable          Json?
+  clientConsentTable          Json?
+
+  memberTable                 Json?
+  memberNoteTable             Json?
+
+  productTable                Json?
+
+  staffView                   String?
+  roomView                    String?
+  bookingView                 String?
+  userId                      String                  @unique @db.Uuid
+  user                        User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  //@@schema("public")
+}
+
+model TextTemplate {
+  id          String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  description String?
+  cost        Decimal?
+  text        String
+  type        String?
+  entityId    String              @default(dbgenerated("get_entity_id()")) @db.Uuid
+  entity      Entity              @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  services    TextsOnServices[]
+  demo        Boolean             @default(false)
+
+  @@index([entityId, type])
+  //@@schema("public")
+}
+
+model TextsOnServices {
+  textTemplateId    String                 @db.Uuid
+  serviceId         String                 @db.Uuid
+  service           Service                @relation(fields: [serviceId], references: [id])
+  textTemplate      TextTemplate           @relation(fields: [textTemplateId], references: [id], onDelete: Cascade)
+
+  @@id([textTemplateId, serviceId])
+  //@@schema("public")
+}
+
+
+model ConsentsOnServices {
+  serviceId         String                  @db.Uuid
+  service           Service                 @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  // FormArea          FormArea                @default(value: ClientConsent)
+  formId            String                  @db.Uuid
+  form              Form                    @relation(fields: [formId], references: [id], onDelete: Cascade)
+
+  @@id([formId, serviceId])
+  //@@schema("public")
+}
+
+model ClientConsent {
+  id                 String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  clientId           String                 @db.Uuid
+  // dateTime           DateTime
+  // signedDateTime     DateTime?
+  consentTitle       String
+  consentText        String
+  formData           Json?
+  //formId is the identifier to the actual consent
+  formId             String                 @db.Uuid
+  client             Client                 @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  
+  clientAcceptance   Boolean                @default(false)
+  clientSignatureId  String?                @db.Uuid @unique
+  clientSignature    Signature?             @relation(name: "clientSignature", fields: [clientSignatureId], references: [id])
+  clientSignatureDateTime DateTime?
+
+  userAcceptance     Boolean                @default(false)
+  userSignatureId    String?                @db.Uuid @unique
+  userSignature      Signature?             @relation(name: "userSignature",fields: [userSignatureId], references: [id])
+  userSignatureDateTime DateTime?
+
+  createdBy          String                 @db.Uuid
+  creator            User                   @relation(name: "creator", fields: [createdBy], references: [id], onDelete: Cascade)
+  createdAt          DateTime               @default(now()) @db.Timestamptz
+
+  @@index([clientId, formId])
+  //@@schema("public") 
+}
+
+model Signature {
+  id                 String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid 
+  entityId           String                 @default(dbgenerated("get_entity_id()")) @db.Uuid
+  objectType         String
+  objectId           String                 @db.Uuid
+  signature          String
+
+  clientSignature    ClientConsent?         @relation(name: "clientSignature")
+  userSignature      ClientConsent?         @relation(name: "userSignature")
+
+  createdBy          String                 @db.Uuid
+  creator            Client                 @relation(fields: [createdBy], references: [id], onDelete: Cascade)
+  createdAt          DateTime               @default(now()) @db.Timestamptz
+
+  @@unique([objectId, objectType])
+  @@index([objectId, objectType])
+  //@@schema("public")
+}
+
+// type FieldValidation {
+//    required Boolean
+//   minLength Int?
+//   maxLength Int?
+//   minValue Int?
+//   maxValue Int?
+//   disableFutureDate Boolean?
+//   disablePastDate Boolean?
+
+// }
+
+model Field {
+  id             String           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  entityId       String           @default(dbgenerated("get_entity_id()")) @db.Uuid
+  label          String
+  shortLabel     String?
+  description    String?
+  fieldType       String
+  area           String
+  options        Json?
+  validation     Json?
+  controlType    String?
+  displayOptions Json?
+  demo           Boolean          @default(false)
+  formId         String           @db.Uuid
+  deleted        Boolean          @default(false)
+  entity         Entity           @relation(fields: [entityId], references: [id], onDelete: Cascade)
+
+  @@index([formId])
+  @@index([area])
+  @@index([entityId, area])
+  //@@schema("public")
+}
+
+
+model ClientQuestionnaire {
+  id                     String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  date                   DateTime
+  clientId               String                  @db.Uuid
+  formId                 String                  @db.Uuid
+
+  signatureId            String?                 @db.Uuid
+  entityId String @default(dbgenerated("(current_setting('app.current_entity_id'::text))::uuid")) @db.Uuid
+  client                 Client                  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  //entity                 Entity                  @relation(fields: [entityId], references: [id], onDelete: Cascade)
+
+  @@index([id])
+  @@index([clientId])
+  @@index([entityId])
+
+  //@@schema("public")
+}
+
+// model Question {
+//   id                     String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+//   question               String
+//   type                   String
+//   options                String
+//   required               Boolean            @default(false)
+//   questionnaireId        String
+//   description            String?
+//   maxValue               Int?
+//   questionnaire          Questionnaire      @relation(fields: [questionnaireId], references: [id])
+//   questionnaireResponses QuestionResponse[]
+
+//   @@index([questionnaireId])
+//   //@@schema("public")
+// }
+
+// model QuestionnaireResponse {
+//   id              String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+//   questionnaireId String
+//   clientId        String
+//   date            DateTime
+//   responses       QuestionResponse[]
+//   client          Client             @relation(fields: [clientId], references: [id])
+//   questionnaire   Questionnaire      @relation(fields: [questionnaireId], references: [id])
+
+//   @@index([questionnaireId, clientId])
+//   //@@schema("public")
+// }
+
+// model QuestionResponse {
+//   id                      String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+//   questionId              String
+//   response                String
+//   questionnaireResponseId String
+//   question                Question              @relation(fields: [questionId], references: [id])
+//   questionnaireResponse   QuestionnaireResponse @relation(fields: [questionnaireResponseId], references: [id])
+
+//   @@index([questionId, questionnaireResponseId])
+//   //@@schema("public")
+// }
+
+
+
+model FormData {
+  id            String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  formId        String                  @db.Uuid
+  objectId      String                  @db.Uuid
+  objectType    String
+  data          Json
+  forms         Form                    @relation(fields: [formId], references: [id], onDelete: Cascade)
+  @@unique([formId, objectId, objectType])
+  @@index([formId])
+  @@index([objectId, objectType])
+  //@@schema("public")
+}
+
+// model Cities {
+
+//   id            Int                     @id
+//   name          String
+//   state_id      Int
+//   state_code    String
+//   state_name    String
+//   country_id    Int
+//   country_code  String
+//   country_name  String
+//   latitude      Decimal
+//   longitude     Decimal
+//   wikiDataId    String?
+
+//   //@@schema("public")
+// }
+
+
+// model Countries {
+//   id            Int                     @id
+//   name          String
+//   iso3          String
+//   iso2          String
+//   phonecode     String
+//   capital       String
+//   currency      String
+//   currency_symbol String
+//   tld           String
+//   native        String
+//   region        String
+//   subregion     String
+//   timezones     String
+//   translations  String
+//   latitude      Decimal
+//   longitude     Decimal
+//   emoji         String
+//   emojiU        String
+//   created_at    DateTime              @default(now()) @db.Timestamptz   
+//   updated_at    DateTime              @default(now()) @db.Timestamptz
+//   flag          Int
+//   wikiDataId    String
+
+//   //@@schema("public")
+// }
+
+
+
+// model States{
+//   id            Int                   @id
+//   name          String
+//   country_id    Int
+//   country_code  String
+//   country_name  String
+//   state_code    String
+//   type          String?
+//   latitude      Decimal?
+//   longitude     Decimal?
+
+//   //@@schema("public")
+//  }
+
+enum UnitOfMeasure {
+  each
+  pieces
+  box
+  case
+  lb
+  oz
+  kg
+  g
+  mg
+  ml
+  l
+  gal
+  qt
+  pt
+  //@@schema("public")
+}
+
+model Product {
+  id                      String                   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid 
+  name                    String
+  description             String?
+  unitOfMeasure           UnitOfMeasure
+  productTypeId           String                  @db.Uuid
+  productType             ProductType             @relation(fields: [productTypeId], references: [id])
+  prices                  ProductPrice[]
+  discounts               ProductDiscount[]
+  campaigns               CampaignProduct[]
+  demo                    Boolean                 @default(false)
+  entityId                String                  @default(dbgenerated("get_entity_id()")) @db.Uuid
+  entity                  Entity                  @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  records                 ProductsOnRecords[]
+  services                ProductsOnServices[]
+  @@unique([entityId, name, productTypeId], name: "uq_p_product_name_product_type_id")                 
+  @@index([entityId])
+  @@index([id, entityId])
+  //@@schema("public")
+}
+
+model ProductType {
+  id                      String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                    String
+  products                Product[]
+  entityId                String                  @default(dbgenerated("get_entity_id()")) @db.Uuid
+  entity                  Entity                  @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  demo                    Boolean                 @default(false)
+  @@index([entityId])    
+  //@@schema("public")
+}
+
+model ProductPrice {
+  id                      String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  price                   Decimal
+  productId               String                  @db.Uuid
+  product                 Product                 @relation(fields: [productId], references: [id], onDelete: Cascade)
+  effectiveDate           DateTime
+  archived                Boolean                 @default(false)
+  locationId              String                 @db.Uuid
+  location                Location               @relation(fields: [locationId], references: [id], onDelete: Cascade)
+  @@index([productId, archived])
+  //@@schema("public")
+}
+
+model ProductDiscount {
+  id                      String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  minQuantity             Int                     @default(1)
+  discountValue           Decimal
+  effectiveDate           DateTime
+  endDate                 DateTime
+  archived                Boolean                 @default(false)
+  productId               String                  @db.Uuid
+  product                 Product                 @relation(fields: [productId], references: [id], onDelete: Cascade)
+  locationId              String                 @db.Uuid
+  location                Location               @relation(fields: [locationId], references: [id], onDelete: Cascade)
+  @@index([productId, archived])
+  //@@schema("public")
+}
+
+
+enum CampaignType {
+  NewClientSoliciation
+  ReactivateOldClient
+  SolicitReferrals
+  ServiceReminder
+  //@@schema("public")
+}
+
+enum CommunicationType {
+  Email
+  SMS
+  OnlineCoupon
+  StreetSign
+  CharityEvent
+  NewspaperAdvertisement
+  //@@schema("public")
+}
+
+model Campaign {
+  id                      String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                    String
+  description             String?
+  startDate               DateTime
+  endDate                 DateTime
+  expiresDate             DateTime
+  products                CampaignProduct[]
+  locationId              String                  @db.Uuid
+  location                Location                @relation(fields: [locationId], references: [id], onDelete: Cascade)
+  type                    CampaignType
+  communitionType         CommunicationType
+  @@index([locationId])
+  //@@schema("public")
+}
+
+model CampaignProduct {
+  id                      String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  productId               String                  @db.Uuid
+  product                 Product                 @relation(fields: [productId], references: [id], onDelete: Cascade)
+  campaignId              String                  @db.Uuid
+  campaign                Campaign                @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  qty                     Int                     @default(1)
+  discountValue           Decimal
+  @@index([campaignId])
+  //@@schema("public")
+}
+
+model CampaignVendor {
+  id                      String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  thirdPartyVendorId      String                  @db.Uuid
+  vendor                  ThirdPartyVendor        @relation(fields: [thirdPartyVendorId], references: [id], onDelete: Cascade)
+
+  //@@schema("public")
+}
+
+model ThirdPartyVendor {
+  id                      String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                    String
+  description             String?
+  key                     String
+  campaigns               CampaignVendor[]
+  locationId              String                  @db.Uuid
+  location                Location                @relation(fields: [locationId], references: [id], onDelete: Cascade)
+
+  //@@schema("public")
+}
+
+model UserConnection {
+  id                      String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  providerId              String
+  providerName            String
+  
+  userId                  String                  @db.Uuid
+  user                    User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  createdAt               DateTime                @default(now()) @db.Timestamptz
+  updatedAt               DateTime                @default(now()) @updatedAt @db.Timestamptz
+  @@index([userId])
+
+@@unique([providerName, providerId])
+  // @@unique([providerName, providerId])
+  //@@schema("public")
+}
+
+model DemoClientEvent {
+  id                      String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid  
+  email                   String
+  dayDifference           Int
+  startTime               Int
+  endTime                 Int
+  service1                String
+  service2                String
+  teamMemberEmail         String
+
+  @@index([email])
+}
+
+enum IntegrationType {
+  Mailchimp
+  SendGrid
+  //@@schema("public")
+}
+
+model EntityIntegration {
+  id                            String                   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  entityId                      String                   @default(dbgenerated("get_entity_id()")) @db.Uuid
+  entity                        Entity                   @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  state                         String?
+  accessToken                   String?
+  serverPrefix                   String?
+  integrationType               IntegrationType
+  integrationData               Json?
+  invalid                       Boolean                  @default(false)
+  lists                         IntegrationList[]
+
+  @@index([entityId])
+  @@index([entityId, integrationType, invalid])  
+  //@@schema("public")
+}
+
+model IntegrationList {
+  id                            String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  integrationId                 String                    @db.Uuid
+  integration                   EntityIntegration         @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  listId                        String                    
+  listName                      String
+  listType                      String?
+  listData                      Json?
+  primary                       Boolean                   @default(false)
+  tags                          IntegrationTag[]
+
+  @@unique([integrationId, listId], name: "uq_i_integration_id_list_id")
+  @@index([integrationId])
+  // clients                       ClientToIntegrationList[]
+  //@@schema("public")
+}
+
+model IntegrationTag {
+  id                            String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  integrationListId             String                    @db.Uuid
+  integrationList               IntegrationList           @relation(fields: [integrationListId], references: [id], onDelete: Cascade)
+  tagId                         String                    @db.Uuid
+  tagName                       String
+
+  @@index([integrationListId])
+}
+
+model IntegrationUpdateLog {
+  id                            String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  integrationId                 String                    @db.Uuid
+  updateType                    String
+  updateData                    Json?
+  createdAt                     DateTime                  @default(now()) @db.Timestamptz
+  updated                       Boolean                   @default(false)
+  updatedAt                     DateTime                  @default(now()) @db.Timestamptz
+  updatedData                   Json?
+
+  @@index([integrationId, updated])
+}
+
+// model ClientToIntegrationList {
+//   id                            String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+//   clientId                      String                    @db.Uuid
+//   client                        Client                    @relation(fields: [clientId], references: [id], onDelete: Cascade)
+//   integrationListId             String                    @db.Uuid
+//   integrationList               IntegrationList           @relation(fields: [integrationListId], references: [id], onDelete: Cascade)
+//   //@@schema("public")
+// }
+
+model Role {
+  id                            String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                          String
+  description                   String?
+  permissions                   RolePermission[]
+  users                         User[]
+  entityId                      String                    @default(dbgenerated("get_entity_id()")) @db.Uuid
+  entity                        Entity                    @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  @@index([entityId])
+  @@index([id, entityId])
+  //@@schema("public")
+}
+
+model RolePermission {
+  id                            String                    @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  roleId                        String                    @db.Uuid
+  role                          Role                      @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  modulePermissionId            String                    @db.Uuid
+  modulePermission              ModulePermission          @relation(fields: [modulePermissionId], references: [id], onDelete: Cascade)
+  
+  @@id([roleId, modulePermissionId])
+  @@index([roleId])
+  @@index([modulePermissionId])
+  //@@schema("public")
+}
+
+model Permission {
+  id                            String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                          String
+  description                   String?
+  modules                       ModulePermission[]
+  @@index([id])
+  //@@schema("public")
+}
+
+enum ModuleIdentifier {
+  BookingSettings
+  Bookings
+  CategoriesSettings
+  Client
+  ClientMgmt
+  ClientRecordMgmt
+  ClientSettings
+  CompanySettings
+  Dashboard
+  FormsSettings
+  ProductsSettings
+  SecurityRoleSettings
+  ServicesSettings
+  CombinationsSettings
+  Team
+  TeamMemberSchedule
+  TeamMgmt
+  TeamRoleMgmt
+  TeamSchedule
+}
+
+
+model Module {
+  id                            String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                          String
+  description                   String?
+  sort                          Int?
+  moduleIdentifier               ModuleIdentifier?
+  modulePermissions             ModulePermission[]
+  @@index([id])
+  //@@schema("public")
+}
+
+model ModulePermission {
+  id                            String                    @unique @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  moduleId                      String                    @db.Uuid
+  module                        Module                    @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  permissionId                  String                    @db.Uuid
+  permission                    Permission                @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  roles                         RolePermission[]
+  
+  @@id([moduleId, permissionId])
+  @@index([moduleId])
+  @@index([permissionId])
+  //@@schema("public")
+}
+

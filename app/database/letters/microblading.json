@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "fbb4fec3-4996-44b9-80a0-ad6b6dab19fe",
+          "text": "<p><span style=\"font-size: 14pt;\"><span style=\"font-family: Verdana, Geneva, sans-serif;\"><span style=\"color: rgb(47, 84, 150); text-decoration: inherit;\"><strong>Microblading Consent Form</strong></span></span></span></p>",
+          "colSpan": 0,
+          "fieldType": "HEADER",
+          "validation": {
+            "required": false
+          }
+        }
+      ],
+      "sortOrder": 0
+    },
+    {
+      "controls": [
+        {
+          "id": "consentText",
+          "text": "<p><span lang=\"EN-US\">I\nunderstand that a certain amount of discomfort may result from this procedure\nsuch as: stinging, burning, and scratching.<br>\n<br>\nMy procedure may result in temporary bruising, swelling, and redness in the\narea.<br>\n<br>\nRetin-A, Renova, Alpha Hydroxy, and Glycolic Acids must not be used on the\ntreated areas; these acids cause premature exfoliation of the pigment and will\nalter retention of pigment and color of the treated area.<br>\n<br>\nI understand that this is a semi-permanent cosmetic procedure and that\nsuccessful color saturation CANNOT BE GUARANTEED. Skin condition, hidden scar\ntissue, previous permanent makeup, or laser treatments may affect the results\nof my procedure.<br>\n<br>\nI will inform all skincare professionals as well as all medical personnel about\nmy brow treatment in particular I will inform the above mentioned that I had\nthis treatment before an MRI.<br>\n<br>\nI take full responsibility to explain to my brow specialist any desires\nregarding specific colors, shape, or positioning for my brow procedure PRIOR to\nmy procedure; I understand that once my brow outline (brow box) has been drawn\non, it will be my final opportunity to make adjustments. Once I’ve accepted my\noutline, I’m consenting to my brow shape.<br>\n<br>\nI understand that the implanted pigment [color] can change/fade over time due\nto circumstances above your control. Future touch ups or applications will be\nneeded to maintain the appearance of your brows.<br>\n<br>\nI understand that although my brow procedure has created beautiful brows, I may\nstill and I’m encouraged to use cosmetic brow products to further enhance my\nbrows.<br>\n<br>\nI acknowledge that the proposed procedure involves inherit risks. There is a\npossibility of complications during and/or after the procedure such as:\ninfection, misplaced pigment, scabbing, poor color retention, and hyper\npigmentation.<br>\n<br>\nI’ve been quoted the price of today’s session and been advised that a future\ntouch up is highly recommended. A discounted touch-up session will be offered\nbetween 6-12 weeks. After 12 weeks the pricing is determined at the discretion\nof the brow specialist. Pricing will vary on maintenance and pigment retention.<br>\n<br>\n<br>\n<br>\n</span></p><p><span lang=\"EN-US\">I\ncertify that I have read of have been read the contents of this form. I\nunderstand the risks involved in this procedure. I understand that my skin\ncondition plays a huge role in my semi-permanent cosmetic procedure as such\nRETENTION IS NOT GUARNATEED. I have had the opportunity to ask questions and\ndiscuss the procedure in detail. I acknowledge that there are no refunds for\nany or all of the procedure I’m receiving today including deposits. I\nacknowledge that I completely understand the material given to me; I authorize\nBeverly Hills Aesthetic Medics (BHAM90210)/Gigi Rose (Gabriella Gonzales),\nMicroblading artist at Beverly Hills Aesthetic Medics LLC (formerly Cosmetic\nLaserWorks LLC) to perform 3D Eyebrow Microblading.</span></p>",
+          "colSpan": 0,
+          "fieldType": "RICHTEXT",
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 1
+    },
+    {
+      "controls": [
+        {
+          "id": "clientAcceptance",
+          "label": "I agree to use electronic records and signatures",
+          "colSpan": 0,
+          "fieldType": "CHECKBOX",
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 2
+    },
+    {
+      "controls": [
+        {
+          "id": "clientSignatureId",
+          "label": "Client Signature",
+          "colSpan": 0,
+          "fieldType": "SIGNATURE",
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 3
+    }
+  ]
+}

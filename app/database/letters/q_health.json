@@ -1,0 +1,973 @@
+{
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "fbb4fec3-4996-44b9-80a0-ad6b6dab19fe",
+          "text": "<p><span style=\"font-size: 14pt;\"><span style=\"font-family: Verdana, Geneva, sans-serif;\"><span style=\"color: rgb(47, 84, 150); text-decoration: inherit;\"><strong>Health Questionnaire</strong></span></span></span></p>",
+          "colSpan": 0,
+          "fieldType": "HEADER",
+          "validation": {
+            "required": false
+          }
+        }
+      ],
+      "sortOrder": 0
+    },
+    {
+      "controls": [
+        {
+          "id": "4fe8962e-a09d-479b-8dd2-102b721a2589",
+          "label": "Do you suffer from any allergies? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "textBox": "More Info..",
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "If YES, please give more information",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 1
+    },
+    {
+      "controls": [
+        {
+          "id": "722faaf9-6d96-4362-84e3-726ae2199bab",
+          "label": "Do you use tobacco?",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 2
+    },
+    {
+      "controls": [
+        {
+          "id": "63518857-9c82-4e4a-b9e8-9aeacac8697f",
+          "label": "Are you pregnant, breastfeeding or trying to conceive? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 3
+    },
+    {
+      "controls": [
+        {
+          "id": "8ebe899e-2cb1-4eba-9050-24d037dcb064",
+          "label": "Are you currently receiving any medical treatment? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "textBox": "More Info..",
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "If YES, please give more information:",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 4
+    },
+    {
+      "controls": [
+        {
+          "id": "5c41ecd4-6162-4550-9ec6-f2974cecaeb2",
+          "label": "Are you currently taking steroids, acetylsalicylic acid (i.e. Treo or Aspirin) or any anticoagulant (i.e. Warfarin)? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 5
+    },
+    {
+      "controls": [
+        {
+          "id": "d616254a-5335-4e9a-b502-d8cf58f07592",
+          "label": "Have you recently used any glycolic acid or retinoids (such as isotretinoin or tretinoin)? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 6
+    },
+    {
+      "controls": [
+        {
+          "id": "62dde65a-bfc3-4410-a717-13d91eba640a",
+          "label": "Do you have an ongoing infection in your body or have you taken antibiotics in the last four weeks? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "textBox": "More Info..",
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "If YES, please give more information:",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 7
+    },
+    {
+      "controls": [
+        {
+          "id": "0e301f71-b0a4-40d2-9d62-7777178e0111",
+          "label": "Do you have an ongoing illness that is physical or mental?",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "textBox": "More Info..",
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "If YES, please give more information",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 8
+    },
+    {
+      "controls": [
+        {
+          "id": "e5efde0b-3277-495d-8162-0d283b6b2558",
+          "label": "Have you had problems with anxiety, depression, or other mental disorders? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "textBox": "More Info..",
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "If YES, please give more information",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 9
+    },
+    {
+      "controls": [
+        {
+          "id": "301b9b3e-6aba-4b6b-8505-278e6cf3a028",
+          "label": "Do you have an autoimmune disease or a disease that has affected the immune system? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "textBox": "More Info..",
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "If YES, please give more information",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 10
+    },
+    {
+      "controls": [
+        {
+          "id": "8da32996-cc12-446c-9a63-81986dfa0037",
+          "label": "Do you have diabetes? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 11
+    },
+    {
+      "controls": [
+        {
+          "id": "0b0c1efd-b457-4237-ad5d-c654a83f3e12",
+          "label": "Do you have any hemophilia? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 12
+    },
+    {
+      "controls": [
+        {
+          "id": "6dc09f9d-a64f-42ef-bf2c-1475a1408bc5",
+          "label": "Do you suffer from acute rheumatoid arthritis or recurrent sore throat? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 13
+    },
+    {
+      "controls": [
+        {
+          "id": "d97a4ea0-2726-4bc0-b1cd-eeef44e6975f",
+          "label": "Do you suffer from amyotrophic sclerosis (ALS) or peripheral neuromuscular disorder (nerve disease)? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 14
+    },
+    {
+      "controls": [
+        {
+          "id": "59482642-880e-4ce0-b1bd-f391b011d81d",
+          "label": "Do you suffer from myasthenia gravis or Eaton-Lambert syndrome (muscle disease)? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 15
+    },
+    {
+      "controls": [
+        {
+          "id": "2113d2d5-e4d2-4111-a251-c348cc6051b5",
+          "label": "Do you suffer from untreated epilepsy? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 16
+    },
+    {
+      "controls": [
+        {
+          "id": "0b292d08-6411-48fc-bee4-f50a3a42c595",
+          "label": "Do you have a tendency to develop large scars (keloids)? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 17
+    },
+    {
+      "controls": [
+        {
+          "id": "730c5b7f-c124-452d-a8d6-066bb3a6d693",
+          "label": "Have you had any skin cancer before?",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 18
+    },
+    {
+      "controls": [
+        {
+          "id": "d65db7cf-86bf-4cd1-b9d4-351624725c35",
+          "label": "Do you suffer from porphyria (hereditary disease)? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 19
+    },
+    {
+      "controls": [
+        {
+          "id": "018fce5a-53b1-4aca-8f0f-7cfd9b77d5c2",
+          "label": "Do you suffer from abnormal palpitations or other heart disease? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 20
+    },
+    {
+      "controls": [
+        {
+          "id": "ba6c15e2-c873-45c6-bd74-e6dec5caa328",
+          "label": "Have you been to or are you planning a dental visit soon? (2 weeks before / 2 weeks after) ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 21
+    },
+    {
+      "controls": [
+        {
+          "id": "7f59628c-9d8b-4756-bbd5-b5981e72a2fd",
+          "label": "Have you previously received any aesthetic treatments (i.e. laser, peeling, dermabrasion, microneedling, IPL, Chemical Peeling, PRP, etc.)? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "textBox": "More Info..",
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "If YES, please give more information",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 22
+    },
+    {
+      "controls": [
+        {
+          "id": "db0f8ae7-ff91-4417-8d58-58e6c3e96534",
+          "label": "Have you previously received injectable treatments, thread lift or undergone facial surgery of any kind? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "textBox": "More Info..",
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "If YES, please give more information",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 23
+    },
+    {
+      "controls": [
+        {
+          "id": "53c80564-8f9f-4196-994a-c6d19c33298f",
+          "label": "Did you experience any side effects related to the treatment?",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "textBox": "More Info..",
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "If YES, please give more information",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 24
+    },
+    {
+      "controls": [
+        {
+          "id": "81faf329-422e-44ea-bfc8-36c5c539173b",
+          "label": "Do you have any skin infection or inflammatory skin problems (i.e. herpes, acne, rosacea, etc.)?",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 25
+    },
+    {
+      "controls": [
+        {
+          "id": "f5bb0d7f-c8f0-40db-a58e-dc0f23fa3293",
+          "label": "Do you have tattoos or permanent makeup in the treatment area? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 26
+    },
+    {
+      "controls": [
+        {
+          "id": "9fe7ab7d-d4cf-4b4e-b1df-68c826569db1",
+          "label": "Do you have tanned skin now? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 27
+    },
+    {
+      "controls": [
+        {
+          "id": "03755c45-4d38-4807-a783-98c34367bfba",
+          "label": "Do you have Melasma or Chloasma (pigmentation)? ",
+          "colSpan": 0,
+          "options": [
+            {
+              "text": "Yes",
+              "value": 2,
+              "sortOrder": 0
+            },
+            {
+              "text": "No",
+              "value": 1,
+              "sortOrder": 1
+            }
+          ],
+          "fieldType": "SELECT",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "RADIO",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "left",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 28
+    },
+    {
+      "controls": [
+        {
+          "id": "dd7e4bae-5a83-44aa-a630-dcf6d60c6177",
+          "label": "Other comments about your health",
+          "colSpan": 0,
+          "options": [],
+          "fieldType": "TEXTAREA",
+          "shortLabel": "",
+          "validation": {
+            "required": false
+          },
+          "controlType": "",
+          "description": "",
+          "displayOptions": {
+            "textAlign": "top",
+            "displayColumns": 1
+          }
+        }
+      ],
+      "sortOrder": 29
+    }
+  ]
+}

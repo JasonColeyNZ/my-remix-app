@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Mailchimp",
+    "integrationType": "Mailchimp",
+    "shortDescription": "Connect to Mailchimp to synchronize contact lists, marketing campaigns and more.",
+    "logo": "/app/assets/mailchimp.png"
+  },
+  {
+    "name": "SendGrid",
+    "integrationType": "SendGrid",
+    "shortDescription": "Connect to SendGrid to synchronize contact lists, marketing campaigns and more.",
+    "logo": "/app/assets/twilio-sendgrid.webp"
+  },
+  {
+    "name": "Google Calendar",
+    "integrationType": "GoogleCalendar",
+    "shortDescription": "Easy MedSpa can integrate with Google Calendar allowing you to sync your Easy MedSpa appointments with your Google Calendar."
+  }
+]

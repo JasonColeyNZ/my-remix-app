@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "title",
+          "label": "Title",
+          "colSpan": 0,
+          "fieldType": "TEXTINPUT"
+        },
+        {
+          "id": "datetime",
+          "label": "Date",
+          "colSpan": 20,
+          "fieldType": "DATETIME",
+          "controlType": "DATETIME"
+        }
+      ],
+      "sortOrder": 0
+    },
+    {
+      "controls": [
+        {
+          "id": "text",
+          "label": "",
+          "colSpan": 0,
+          "fieldType": "RICHTEXT"
+        }
+      ],
+      "sortOrder": 1
+    }
+  ]
+}

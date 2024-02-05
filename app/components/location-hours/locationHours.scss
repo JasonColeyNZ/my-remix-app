@@ -1,0 +1,33 @@
+.dx-scheduler-all-day-panel {
+  display: none;
+}
+.dx-scheduler-all-day-panel-space {
+  padding-top: 0;
+  margin-top: 0;
+}
+.dx-scheduler-header {
+  display: none;
+}
+.dx-scheduler-work-space {
+  padding-top: 0px;
+  margin-top: 0;
+}
+.dx-scheduler-work-space {
+  border: none;
+}
+.dx-scheduler-work-space-day .dx-scrollable {
+  padding-bottom: 0px;
+}
+.dx-scheduler-work-space-day .dx-scrollable {
+  padding-bottom: 0px;
+}
+.dx-scheduler-header-tables-container {
+  overflow-y: scroll;
+}
+
+.disable-date {
+  height: 100%;
+  background-color: #f2f2f2;
+  color: #999999;
+  cursor: not-allowed;
+}

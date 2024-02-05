@@ -1,0 +1,35 @@
+// import { createCookieSessionStorage } from "@remix-run/cloudflare";
+
+// // import { type ProviderName } from "./connections.tsx";
+// // import { FacebookProvider } from "./providers/facebook.server.ts";
+// // import { GitHubProvider } from "./providers/github.server.ts";
+// // import { GoogleProvider } from "./providers/google.server.ts";
+// // import { type AuthProvider } from "./providers/provider.ts";
+
+// export const connectionSessionStorage = createCookieSessionStorage({
+//   cookie: {
+//     name: "en_connection",
+//     sameSite: "lax",
+//     path: "/",
+//     httpOnly: true,
+//     maxAge: 60 * 10, // 10 minutes
+//     secrets: process.env.SESSION_SECRET.split(","),
+//     secure: process.env.NODE_ENV === "production",
+//   },
+// });
+// export const providers: Record<ProviderName, AuthProvider> = {
+//   // github: new GitHubProvider(),
+//   // facebook: new FacebookProvider(),
+//   // google: new GoogleProvider(),
+// };
+
+// export function handleMockAction(providerName: ProviderName, request: Request) {
+//   return providers[providerName].handleMockAction(request);
+// }
+
+// export function resolveConnectionData(
+//   providerName: ProviderName,
+//   providerId: string,
+// ) {
+//   return providers[providerName].resolveConnectionData(providerId);
+// }

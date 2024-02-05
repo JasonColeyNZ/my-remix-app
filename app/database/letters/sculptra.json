@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "fbb4fec3-4996-44b9-80a0-ad6b6dab19fe",
+          "text": "<p><span style=\"font-size: 14pt;\"><span style=\"font-family: Verdana, Geneva, sans-serif;\"><span style=\"color: rgb(47, 84, 150); text-decoration: inherit;\"><strong>Sculptra Injectable Informed Consent</strong></span></span></span></p>",
+          "colSpan": 0,
+          "fieldType": "HEADER",
+          "validation": {
+            "required": false
+          }
+        }
+      ],
+      "sortOrder": 0
+    },
+    {
+      "controls": [
+        {
+          "id": "consentText",
+          "text": "<p><span lang=\"EN-US\">Sculptra is a sterile suspension of\nPoly-L-Lactic acid, which is a biocompatible (does not harm the body),\nsynthetic polymer from the alpha-hydroxy acid family (fruit acids).\nPoly-L-Lactic acid has been used medically for many years in dissolvable\nstitches. Sculptra is designed to help correct skin depression, such as\ncreases, wrinkles, folds, scars, hollow eye rings, skin aging, and facial\nlip-atrophy (loss of fat).<br>\n<br>\nSculptra has been used since 1999 in more than 150,000 patients in more than 30\ncountries, primarily for cosmetic use. Your BHAM MedSpa team member has\ninformed you that, depending on the area and condition treated, the volume of\nSculptra used in the injection, the effect of a treatment with Sculptra may\nlast from 1 to 2 years, but that in some cases the duration of the effect can\nbe shorter or longer. Most areas of treatment will require multiple sessions at\n4-week intervals, for optimal correction. Because individual response to\nSculptra may vary, the exact number of treatments sessions required cannot be\npredicted with complete accuracy. Additionally, in order to maintain the\ndesired degree of correction, intermittent “touch-up” treatments may be needed.</span></p><p><b><span lang=\"EN-US\">Risks and Discomfort</span></b></p><p><span lang=\"EN-US\">You have been informed on some of the\nfeatures, benefits, and possible risks involved with Sculptra and have had your\nquestions answered to your satisfaction. Some of the possible risks include:<br>\n<br>\n1. After the injection(s), some common injection-related reactions probably\nwill occur. These may include swelling, redness, pain, itching, discoloration\nand tenderness at the injection site. These typically resolve spontaneously,\nusually within 1 to 15 days after injection.<br>\n2. Because Sculptra is injected in a solution containing water, there will be\nan initial swelling (edema) that will be noticeable for at least several hours\nand perhaps as long as several days. This effect is temporary and does not\naffect the long-term tissue response.<br>\n3. Induration, or a feeling of fullness or thickness, can be felt in the\ninjection areas. This is a normal response of the treated tissue to the process\nof inflammation and new collagen formation. Simply massaging the treated areas\ngently 5 times per day for 5 minutes after the injection can help minimize\ninduration.<br>\n4. One possible delayed side effect is small bumps under the skin, termed\nmicro-nodules, which may be non-visible or visible and may be felt in the areas\nof treatment. Usually, these bumps may only be felt when pressing on the skin.\nMicro-nodules tend to occur within the first 6 to 12 months after the\ntreatment. They usually do not require treatment and usually do not have any\nsymptoms.<br>\n5. Visible bumps may occur in rare instances and they be associated with\nredness, tenderness, skin discoloration or textural alteration. These bumps,\nwhich may be termed granuloma, may or may not require treatment, including, but\nnot limited to, injection, freezing or excision.<br>\n6. Other rarely reported adverse events include: injection site abscess,\nallergic reaction, skin hypertrophy (exaggerated reduction of collagen and\ntissue elasticity) and/or atrophy (reduction of collagen and tissue\nelasticity), malaise, fatigue and swelling (edema).<br>\n7. The use of anti-inflammatory drugs, anti-clotting agents or aspirin might\ncause bleeding or increased bruising at the injection site.</span></p><p><span lang=\"EN-US\">I understand this is an elective procedure and\nI hereby voluntarily consent to treatment for facial rejuvenation, establish\nproper lip and smile lines, and replacing facial volume. The procedure has been\nfully explained to me. I have read the above and understand it. My questions\nhave been answered satisfactorily. I accept the risks and complications of the\nprocedure and I understand that no guarantees are implied as to the outcome of\nthe procedure. I also certify that if I have any changes in my medical history\nI will notify the BHAM MedSpa immediately.</span></p>",
+          "colSpan": 0,
+          "fieldType": "RICHTEXT",
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 1
+    },
+    {
+      "controls": [
+        {
+          "id": "clientAcceptance",
+          "label": "I agree to use electronic records and signatures",
+          "colSpan": 0,
+          "fieldType": "CHECKBOX",
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 2
+    },
+    {
+      "controls": [
+        {
+          "id": "clientSignatureId",
+          "label": "Client Signature",
+          "colSpan": 0,
+          "fieldType": "SIGNATURE",
+          "validation": {
+            "required": true
+          }
+        }
+      ],
+      "sortOrder": 3
+    }
+  ]
+}
